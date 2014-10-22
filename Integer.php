@@ -32,34 +32,22 @@
  * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
- *
- *
- * @category    Framework
- * @package     Hoa_Filter
- * @subpackage  Hoa_Filter_Integer
- *
  */
 
-/**
- * Hoa_Filter_Abstract
- */
-import('Filter.Abstract');
+namespace Hoa\Filter;
+
 
 /**
- * Class Hoa_Filter_Integer.
+ * Class \Hoa\Filter\Integer.
  *
  * Apply an integer filter.
  *
  * @author      Ivan Enderlin <ivan.enderlin@hoa-project.net>
  * @copyright   Copyright © 2007-2014 Ivan Enderlin.
  * @license     New BSD License
- * @since       PHP 5
- * @version     0.1
- * @package     Hoa_Filter
- * @subpackage  Hoa_Filter_Integer
  */
 
-class Hoa_Filter_Integer extends Hoa_Filter_Abstract {
+class Integer extends Generic {
 
     /**
      * Keep integer from string.
@@ -78,7 +66,7 @@ class Hoa_Filter_Integer extends Hoa_Filter_Abstract {
     /**
      * Needed arguments.
      *
-     * @var Hoa_Filter_Abstract array
+     * @var \Hoa\Filter\Generic array
      */
     protected $arguments = array(
         'operation' => 'specify the type of operation : KEEP (0) or CAST (1).'

@@ -32,44 +32,26 @@
  * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
- *
- *
- * @category    Framework
- * @package     Hoa_Filter
- * @subpackage  Hoa_Filter_Array
- *
  */
 
-/**
- * Hoa_Filter_Abstract
- */
-import('Filter.Abstract');
+namespace Hoa\Filter;
 
 /**
- * Hoa_Filter
- */
-import('Filter.~');
-
-/**
- * Class Hoa_Filter_Array.
+ * Class \Hoa\Filter\Array.
  *
  * Apply filters on an array.
  *
  * @author      Ivan Enderlin <ivan.enderlin@hoa-project.net>
  * @copyright   Copyright © 2007-2014 Ivan Enderlin.
  * @license     New BSD License
- * @since       PHP 5
- * @version     0.1
- * @package     Hoa_Filter
- * @subpackage  Hoa_Filter_Array
  */
 
-class Hoa_Filter_Array extends Hoa_Filter_Abstract {
+class Array extends Generic {
 
     /**
      * Needed arguments.
      *
-     * @var Hoa_Filter_Abstract array
+     * @var \Hoa\Filter\Generic array
      */
     protected $arguments = array(
         'filters' => 'specify an associative array of key => filter to apply.'
@@ -85,7 +67,7 @@ class Hoa_Filter_Array extends Hoa_Filter_Abstract {
      * @access  public
      * @param   string  $string    The string to filter.
      * @return  array
-     * @throw   Hoa_Filter_Exception
+     * @throw   \Hoa\Filter\Exception
      */
     public function filter ( $string = null ) {
 
@@ -103,7 +85,7 @@ class Hoa_Filter_Array extends Hoa_Filter_Abstract {
 
         foreach($string as $key => &$value) {
 
-            $add    = new Hoa_Filter();
+            $add    = new \Hoa\Filter();
 
             if(!isset($filters[$key]))
                 if(isset($filters['*']))

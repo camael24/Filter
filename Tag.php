@@ -32,60 +32,48 @@
  * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
- *
- *
- * @category    Framework
- * @package     Hoa_Filter
- * @subpackage  Hoa_Filter_Tag
- *
  */
 
-/**
- * Hoa_Filter_Abstract
- */
-import('Filter.Abstract');
+namespace Hoa\Filter;
 
 /**
- * Class Hoa_Filter_Tag.
+ * Class \Hoa\Filter\Tag.
  *
- * Apply a tag filter on XML.
+ * Apply an upper filter.
  *
  * @author      Ivan Enderlin <ivan.enderlin@hoa-project.net>
  * @copyright   Copyright © 2007-2014 Ivan Enderlin.
  * @license     New BSD License
- * @since       PHP 5
- * @version     0.1
- * @package     Hoa_Filter
- * @subpackage  Hoa_Filter_Tag
  */
 
-class Hoa_Filter_Tag extends Hoa_Filter_Abstract {
+
+class Tag extends Generic {
 
     /**
      * Tag to keep.
      *
-     * @var Hoa_Filter_Tag array
+     * @var \Hoa\Filter\Tag array
      */
     private $keepTag       = array();
 
     /**
      * Attribute to keep.
      *
-     * @var Hoa_Filter_Tag array
+     * @var \Hoa\Filter\Tag array
      */
     private $keepAttribute = array();
 
     /**
      * Value of attribute to keep.
      *
-     * @var Hoa_Filter_Tag array
+     * @var \Hoa\Filter\Tag array
      */
     private $keepValue     = array();
 
     /**
      * Needed arguments.
      *
-     * @var Hoa_Filter_Abstract array
+     * @var \Hoa\Filter\Generic array
      */
     protected $arguments   = array(
         'tag'       => 'specify a list of tag to keep.',

@@ -32,26 +32,19 @@
  * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
- *
- *
- * @category    Framework
- * @package     Hoa_Filter
- * @subpackage  Hoa_Filter_Exception
- *
  */
 
+namespace Hoa\Filter;
+
+
 /**
- * Class Hoa_Filter_Exception.
+ * Class \Hoa\Filter\Exception.
  *
- * Extending the Hoa_Core_Exception class.
+ * Extending the \Hoa\Core\Exception class.
  *
  * @author      Ivan Enderlin <ivan.enderlin@hoa-project.net>
  * @copyright   Copyright © 2007-2014 Ivan Enderlin.
  * @license     New BSD License
- * @since       PHP 5
- * @version     0.1
- * @package     Hoa_Filter
- * @subpackage  Hoa_Filter_Exception
  */
 
-class Hoa_Filter_Exception extends Hoa_Core_Exception { }
+class Exception extends \Hoa\Core\Exception { }

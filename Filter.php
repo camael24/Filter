@@ -32,47 +32,27 @@
  * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
- *
- *
- * @category    Framework
- * @package     Hoa_Filter
- *
  */
 
-/**
- * Hoa_Filter_Exception
- */
-import('Filter.Exception');
+namespace Hoa\Filter;
+
 
 /**
- * Hoa_Filter_Abstract
- */
-import('Filter.Abstract');
-
-/**
- * Hoa_Factory
- */
-import('Factory.~');
-
-/**
- * Class Hoa_Filter.
+ * Class \Hoa\Filter.
  *
  * Build a stack of filter.
  *
  * @author      Ivan Enderlin <ivan.enderlin@hoa-project.net>
  * @copyright   Copyright © 2007-2014 Ivan Enderlin.
  * @license     New BSD License
- * @since       PHP 5
- * @version     0.1
- * @package     Hoa_Filter
  */
 
-class Hoa_Filter extends Hoa_Filter_Abstract {
+class Filter extends Generic {
 
     /**
      * Collection of filters.
      *
-     * @var Hoa_Filter array
+     * @var \Hoa\Filter array
      */
     protected $filters = array();
 
@@ -83,7 +63,7 @@ class Hoa_Filter extends Hoa_Filter_Abstract {
      * @access  public
      * @param   mixed   $filters    The filters.
      * @return  void
-     * @throw   Hoa_Filter_Exception
+     * @throw   \Hoa\Filter\Exception
      */
     public function addFilter ( $filters ) {
 
@@ -109,15 +89,15 @@ class Hoa_Filter extends Hoa_Filter_Abstract {
 
             $arguments = array($arguments);
 
-            $filter = Hoa_Factory::get('Filter', $filter, $arguments);
+            //$filter = \Hoa\Factory::get('Filter', $filter, $arguments);
 
-            if(!($filter instanceof Hoa_Filter_Abstract))
-                throw new Hoa_Filter_Exception(
-                    'The filter %s does not extend Hoa_Filter_Abstract.',
+            if(!($filter instanceof Hoa\Filter\Generic))
+                throw new \Hoa\Filter\Exception(
+                    'The filter %s does not extend \Hoa\Filter\Generic.',
                     0, get_class($filter));
 
             if($this->filterExists(get_class($filter)))
-                throw new Hoa_Filter_Exception(
+                throw new \Hoa\Filter\Exception(
                     'The filter %s already exists.',
                     1, get_class($filter));
 
